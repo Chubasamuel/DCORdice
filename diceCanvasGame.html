@@ -1,0 +1,65 @@
+<!DOCTYPE html><head><title>DCORdice</title></head>
+<body>
+<div id="gBod" width="400" height="400"> 
+
+<input type="button" onclick="throwD(this,0,'r1',15,15)" value="" id="r1"/>
+<input type="button" onclick="throwD(this,1,'r2',15,85)" value="" id="r2"/>
+<input type="button" onclick="throwD(this,2,'r3',90,15)" value="" id="r3"/>
+<input type="button" onclick="throwD(this,3,'r4',90,85)" value="" id="r4"/>
+<input type="button" onclick="throwD(this,4,'b1',15,270)" value="" id="b1"/>
+<input type="button" onclick="throwD(this,5,'b2',15,340)" value="" id="b2"/>
+<input type="button" onclick="throwD(this,6,'b3',90,270)" value="" id="b3"/>
+<input type="button" onclick="throwD(this,7,'b4',90,340)" value="" id="b4"/>
+<input type="button" onclick="throwD(this,8,'l1',348,15)" value="" id="l1"/>
+<input type="button" onclick="throwD(this,9,'l2',348,85)" value="" id="l2"/>
+<input type="button" onclick="throwD(this,10,'l3',273,15)" value="" id="l3"/>
+<input type="button" onclick="throwD(this,11,'l4',273,85)" value="" id="l4"/>
+<input type="button" onclick="throwD(this,12,'o1',348,270)" value="" id="o1"/>
+<input type="button" onclick="throwD(this,13,'o2',348,340)" value="" id="o2"/>
+<input type="button" onclick="throwD(this,14,'o3',273,270)" value="" id="o3"/>
+<input type="button" onclick="throwD(this,15,'o4',273,340)" value="" id="o4"/>
+
+<canvas id="canvas" width="400" height="400">no canvas support</canvas></div>
+<style>
+#gBod{position:relative; border:6px solid red; }
+#gBod input[type=button]{position:absolute; border-radius:360px; width:50px; height:50px}
+#redCount, #r1,#r2,#r3,#r4{background-color:red}
+#blueCount, #b1,#b2,#b3,#b4{ background-color:blue}
+#oliveCount, #l1,#l2,#l3,#l4{background-color:olive}
+#orangeCount, #o1,#o2,#o3,#o4{background-color:orange}
+#r1, #r2,#b1,#b2{left:15px;}
+#l1,#l2,#o1,#o2{left:348px}
+#l3,#l4,#o3,#o4{left:273px}
+#r3,#r4,#b3,#b4{left:90px}
+#r1,#r3,#l1,#l3{ top:15px}
+#r2,#r4,#l2,#l4{top:85px;}
+#b1, #b3,#o1,#o3{top:270px;}
+#b2,#b4,#o2,#o4{top:340px}
+#canvas {border:6px solid green; background-color:white; }
+body{position:relative}
+#counter input[type=button], #panel input[type=button]{position:absolute; width:50px; height:50px; border-radius:360px;}
+#countPan1,#countPan2,#countPanG{background-color:black; font-weight:bold;  border:3px solid lime;}
+#countPan1,#countPan2{color:blue;}
+#countPanG{color:green; left:105px;}
+#countPan2{left:55px}
+#countPan1{left:5px}
+#counter #orangeCount, #redCount,#oliveCount,#blueCount{border:3px solid black; font-weight:bold;}
+#thrower{position:absolute; top:410px; left:155px}
+#redCount{left:210px;}
+#blueCount{left:260px;}
+#orangeCount{left:310px}
+#oliveCount{left:360px;}
+</style>
+
+
+
+
+<div id="panel">
+<input type="button" value="" id="countPan1" onclick="loadCount(this)"/> <input type="button" value="" id="countPan2" onclick="loadCount(this)"/> <input type="button" value="" id="countPanG" onclick="loadCount(this)"/>
+</div>
+<div id="counter">
+<input type="button" id="redCount" value="0" /> <input type="button" id="blueCount" value="0" /> <input type="button" id="oliveCount" value="0" /> <input type="button" id="orangeCount" value="0" /></div>
+
+<script type="text/javascript" src="diceCanvasGame.js"></script><br/><br /> <br /> <button  onclick="throwDice()">throw</button></body>
+</html>
+
